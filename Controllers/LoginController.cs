@@ -22,7 +22,7 @@ namespace WebApi.Controllers
             try
             {
                 openSql();
-                string sql = "select * from LoginTable where Name='" + us.name + "' and Password='" + us.pwd + "'";
+                string sql = "select Name,Password from LoginTable where Name='" + us.name + "' and Password='" + us.pwd + "'";
                 DataSet ds = new DataSet();
                 SqlDataAdapter s = new SqlDataAdapter(sql, strCon);
                 s.Fill(ds);
@@ -36,16 +36,17 @@ namespace WebApi.Controllers
             catch (Exception ex)
             {
                 return Ok(new Models.ResponseData() { data = null, code = 500, msg = "账号密码有误" });
-                throw ex;
+                //throw ex;
             }
-            finally {
+            finally
+            {
                 CloseSql();
             }
             if (trueopen)
             {
                 if (ModelState.IsValid)
                 {
-                   
+
                     return Ok(new Models.ResponseData()
                     {
                         data = JwtTools.Encoder(new Dictionary<string, object> {
@@ -60,7 +61,8 @@ namespace WebApi.Controllers
                     return Ok(new Models.ResponseData() { code = 500, msg = "账号密码有误" });
                 }
             }
-            else {
+            else
+            {
                 return Ok(new Models.ResponseData() { code = 500, msg = "账号密码有误" });
             }
 
@@ -75,6 +77,10 @@ namespace WebApi.Controllers
         {
             strCon.Close();
         }
+        //[Route("userinfo")]
+        //public IHttpActionResult UserInfo(Models.Users user)
+        //{
 
+        //}
     }
 }

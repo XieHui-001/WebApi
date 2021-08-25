@@ -25,7 +25,6 @@ namespace WebApi
             IJwtEncoder encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
             payload.Add("timeout", DateTime.Now.AddDays(1));
             var token = encoder.Encode(payload, key);
-
             return token.Length > 0 ? token : "Error";
         }
         public static Dictionary<string, object> Decode(string iwtStr, string key = null) 

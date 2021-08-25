@@ -98,3 +98,4 @@ E:\控制台测试\WebApi\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
 E:\控制台测试\WebApi\WebApi\obj\Debug\WebApi.csproj.CopyComplete
 E:\控制台测试\WebApi\WebApi\obj\Debug\WebApi.dll
 E:\控制台测试\WebApi\WebApi\obj\Debug\WebApi.pdb
+E:\控制台测试\WebApi\WebApi\obj\Debug\WebApi.csproj.AssemblyReference.cache

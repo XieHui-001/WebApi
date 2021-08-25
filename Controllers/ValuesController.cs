@@ -27,10 +27,10 @@ namespace WebApi.Controllers
         }
         [HttpPost]
         // POST api/values
-        public string Post([FromBody] string value)
+        public string Post([FromBody] Models.Users users)
         {
-            if (value.Equals("张三")) {
-                return "李四";
+            if (users.name_.Equals("张三")) {
+                return users.name_;
             }
             return "";
         }
